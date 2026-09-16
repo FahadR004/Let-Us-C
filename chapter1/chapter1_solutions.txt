@@ -1,0 +1,172 @@
+Chapter 1 Exercises:
+Part A:
+35,550  // No commas
+‘eLearning’ 
+"show" // No string constant
+‘Quest’ // Inverted quotation marks
+23 => 2 power 3; invalid syntax 
+4 6 5 2 // Spaces
+
+Part B:
+B’day // No ' in var names
+#HASH  // No special characters except _
+total%  // No special characters except _
+variable  name // No spaces
+int  // No keywords
+dot.  // No special characters except _
+_main( ) // No special characters except _
+1st  // Should not start with number
+%name% // Should not start with %
+$hello // Should not start with %
+stack-queue // No special characters except _
+
+
+Part C:
+True
+True
+True
+False; not in fractional forms
+True
+True; "for compilers like Visual Studio, gcc, it is -2147483648 to +214748364, whereas for compilers like Turbo C or Turbo C++ the range is -32768 to +32767"
+True
+True
+False
+False
+True
+False; character is not
+
+
+Part D:
+(a) \n		Escape Sequence 
+(b) 3.145   	Real constant 
+(c) -6513   	Integer constant 
+(d) ’D’    	Character constant 
+(e) 4.25e-3   	Exponential form 
+(f) main( )   	Function 
+(g) %f, %d, %c  Format specifier
+(h) ;    	Statement terminator
+(i) Constant   	Literal
+(j) Variable   	Identifier
+(k) &    	Address of operator
+(l) printf( )   Output function 
+(m) scanf( )   	Input function
+
+
+Part E:
+a) Nothing
+b) Nested comments is incorrect
+c) Nothing
+d) Missing semicolon in first print and the scanf.
+
+
+Part F:
+a)
+#include <stdlib.h>
+#include <stdio.h>
+
+int main() {
+        int basic_sal;
+
+        printf("Enter your basic salary: ");
+        scanf("%d", &basic_sal);
+
+        printf("Your gross salary: %.2f\n", basic_sal + 0.4*basic_sal + 0.2*basic_sal);
+}
+
+
+b)
+#include <stdlib.h>
+#include <stdio.h>
+
+int main() {
+        float distance, meters, feet, inches, centimeters;
+
+        printf("Enter distance between two cities (in km): ");
+        scanf("%f", &distance);
+
+        meters = distance * 1000;
+        feet = distance * 3280.8399;
+        inches = distance * 39370.0787;
+        centimeters = distance * 100000;
+
+        printf("Distance in meters: %f; in feet: %f; in inches: %f; in cm: %f\n", meters, feet, inches, centimeters);
+
+}
+
+c)
+#include <stdlib.h>
+#include <stdio.h>
+
+int main() {
+        int DLD, COD, CA, MBSD, OS;
+
+        // Can also take marks with one scanf statement but used separate for clarity
+        printf("Enter DLD marks");
+        scanf("%d", &DLD);
+        printf("Enter COD marks");
+        scanf("%d", &COD);
+        printf("Enter CA marks");
+        scanf("%d", &CA);
+        printf("Enter MBSD marks");
+        scanf("%d", &MBSD);
+        printf("Enter OS marks");
+        scanf("%d", &OS);
+        float aggregate = DLD+COD+CA+MBSD+OS;
+        float percentage = (aggregate/500)*100;
+        printf("Aggregate Marks: %.3f, Percentage: %.3f\n", aggregate, percentage);
+}
+
+d)
+#include <stdlib.h>
+#include <stdio.h>
+
+int main() {
+        float temp_f;
+        printf("Enter temp of city in Fahrentheit: ");
+        scanf("%f", &temp_f);
+
+        float temp_c = (temp_f - 32)/1.8;
+        printf("Temp in Celsius is: %f\n", temp_c);
+}
+
+e)
+#include <stdlib.h>
+#include <stdio.h>
+
+int main() {
+        const float PI = 3.14;
+        float length, breadth, radius;
+
+        printf("Enter the length and breadth of a rectangle (with spaces): ");
+        scanf("%f %f", &length, &breadth);
+
+        printf("Enter the radius of a circle: ");
+        scanf("%f", &radius);
+
+        float area = length * breadth;
+        float perimeter = 2*(length + breadth);
+        float area_c = PI*radius*radius; // Could also use pow()
+        float circumference = 2*PI*radius;
+
+        printf("Rectangle Area: %f, Rectangle Perimeter %f\n", area, perimeter);
+        printf("Circle Area: %f, Circle Circumference: %f\n", area_c, circumference);
+}
+
+f)
+
+#include <stdlib.h>
+#include <stdio.h>
+
+int main() {
+        int dim1 = 1189; // long side
+        int dim2 = 841; // shorter side
+        int temp;
+        printf("Dimension of A0 is: %d mm x %d mm \n", dim1, dim2);
+        for (int i = 1; i < 9; i++) {
+                temp = dim2;
+                dim2 = dim1/2;
+                dim1 = temp;
+                printf("Dimension of A%d is: %d mm x %d mm \n", i, dim1, dim2);
+        }
+}
+
