@@ -1,0 +1,320 @@
+Chapter 2:
+Part A:
+c) Inverted quotations
+d) Can't do assignment like this
+e) Incorrect power syntax
+j) Incorrect division sign
+k) Can't do assignment to an integer
+m) Incorrect string declaration
+
+
+Part B:
+// int a = 3, b = 2, x = 5, y = 4;
+// int ans = 5 * b * b * x - 3 * a * y * y - 8 * b * b * x + 10 * a * y ;
+// printf("\n%d\n", ans);
+
+// int a = 4, y = 1, c = 3;
+// int res = 4 * a * y / c - a * y / c ; 
+// printf("\n%d\n", res);
+
+// float a = 2.2, b = 0.0, c = 4.1, y = 3.0;
+// float s = c + a * y * y / b ;
+// printf("%f\n", s);
+	
+
+// float x = 3.5;
+// float R  = x * x + 2 * x + 1 / 2 * x * x + x + 1 ;
+// printf("%f", R);
+
+
+Part C:
+int g = 10/ 5/ 2/1;
+printf("%d\n", g);	
+
+int b = 3 / 2 + 5 * 4 / 3 ; 
+printf("%d\n", b);	
+	
+int a, c;	
+a = b = c = 3 + 4 ; 
+printf("%d %d %d\n", a, b, c);
+
+int x = 2 - 3 + 5 * 2 / 8 % 3 ; 
+printf("%d\n", x);
+	
+int z = 5 % 3 / 8 * 3 + 4; 
+printf("%d\n", z);
+
+int y = z = -3 % -8  / 2 + 7 ;
+printf("%d\n", y);	
+
+Part D:
+float Z= ((x+3)*pow(x, 3.0))/(y-4)*(y-5)
+float R = ((2*v) + (6.22 * (c+d)))/(g+v)
+float A = ( (7.7 * b * (x*y + a))/(c - 0.8 + 2*b)) / (x + a)*(1/y)
+float X = (pow(12*x, 3.0)/(4*x)) + (pow(8*x, 2.0)/4*x) + (x/(8*x)) + (8/(8*x))
+
+
+Part E:
+a) 0 2 0.000000 2.000000
+b) a = 2 b = -2 c = 2 d = -2
+c) Error because you cannot use modulus operator with float
+d) nn
+
+
+ nn
+
+nn /n/n nn/n
+e) The input asks for three values which is unintended behaviour
+
+
+
+Part F:
+True
+False, only ()
+True
+True
+False
+False
+
+Part G:
+*
+5
+5
+-9
+0.285
+
+
+Part H:
+a)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+        int num;
+        int sum = 0;
+        printf("Enter a number: ");
+        scanf("%d",&num);
+
+        while (num != 0) {
+                sum += num % 10;
+                printf("%d\n", sum);
+                num = num / 10;
+                printf("%d\n", num);
+        }
+
+        printf("Sum of all numbers: %d", sum);
+
+}
+
+b)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main () {
+        int num, revnum = 0;
+
+        printf("Enter a number: ");
+        scanf("%d", &num);
+
+        while (num != 0 ) {
+                revnum = revnum * 10 + num % 10;
+                num = num / 10;
+        }
+
+        printf("Reversed number: %d\n", revnum);
+}
+
+c)
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+        int side1, side2, side3;
+        printf("Enter all three sides of a triangle (with spaces): ");
+        scanf("%d %d %d", &side1, &side2, &side3);
+
+        float s = (side1 + side2 + side3) / 2;
+        float area = sqrt( s * (s-side1) * (s-side2) * (s-side3) );
+
+        printf("The area of the triangle calculated using Heron's Formula %f\n", area);
+
+}
+
+d) 
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+        float x, y;
+        float r, phi;
+
+        printf("Enter cartesian coordinates, x and y (with spaces): ");
+        scanf("%f %f", &x, &y);
+        int x_pow = pow(x, 2.0);
+        int y_pow = pow(y, 2.0);
+        r  = sqrt( x_pow + y_pow );
+        phi = atan( y/ x );
+
+        printf("The polar coordinates are: r = %.2f, phi= %f radians \n", r, phi);
+}
+
+e)
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+        float l1, g1, l2, g2;
+
+        printf("Enter latitude and longitude of city1 in degrees (with spaces)");
+        scanf("%f %f", &l1, &g1);
+
+        printf("Enter latitude and longitude of city2 in degrees (with spaces)");
+        scanf("%f %f", &l2, &g2);
+
+        float sin_val = sin(l1) * sin(l2); // automatically converted to double
+        float cos_val = cos(l1) * cos(l2);
+        float cos_val_g = cos(g2 - g1);
+        float inv_val = sin_val + cos_val * cos_val_g;
+        float distance = 3963 * acos(inv_val);
+
+        printf("The distance in nautical miles between city 1 and 2 is: %f miles \n", distance);
+
+
+}
+
+f)
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+        int temp, w_vel;
+        printf("Enter the values of temperature and wind velocity (with spaces): ");
+        scanf("%d %d", &temp, &w_vel);
+
+        printf("Calculating wind chill factor: ");
+        float wcf = 35.74 + 0.6215*temp + (0.4275*temp - 35.75) * pow(w_vel, 0.16);
+
+        printf("The wind chill factor is: %.2f\n", wcf);
+}
+
+g)
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+        float angle;
+        printf("Enter the value of angle: ");
+        scanf("%f", &angle);
+
+        printf("Cos(%f): %f, Sin(%f): %f, Tan(%f): %f\n", angle, cos(angle), angle, sin(angle), angle, tan(angle));
+
+}
+
+
+h)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+        int C, D, temp;
+        printf("Enter two numbers (with spaces): ");
+        scanf("%d %d", &C, &D);
+
+        printf("Before swap: C = %d, D=%d\n", C, D);
+        temp = C;
+        C = D;
+        D = temp;
+
+        printf("After swap: C = %d, D=%d\n", C, D);
+
+}
+
+i)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+        int num, hund_cnt, fifty_cnt, ten_cnt, five_cnt, two_cnt, one_cnt;
+        hund_cnt =  fifty_cnt = ten_cnt = five_cnt = two_cnt = one_cnt = 0;
+
+        printf("Enter a number: ");
+        scanf("%d", &num);
+
+        while (num >= 100) {
+                num = num - 100;
+                hund_cnt++;
+        }
+
+        while (num >= 50) {
+                num = num - 50;
+                fifty_cnt++;
+        }
+
+        while (num >= 10) {
+                num = num - 10;
+                ten_cnt++;
+        }
+
+        while (num >= 5) {
+                num = num - 5;
+                five_cnt++;
+        }
+
+        while (num >= 2) {
+                num = num - 2;
+                two_cnt++;
+        }
+
+        while (num != 0) {
+                num = num - 1;
+                one_cnt++;
+        }
+
+	printf("To create the current number using the smallest number of notes, we have: \n");
+        printf("%d 100(s), %d 50(s), %d 10(s), %d 5(s), %d 2(s), %d 1(s)\n", hund_cnt, fifty_cnt, ten_cnt, five_cnt, two_cnt, one_cnt);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
