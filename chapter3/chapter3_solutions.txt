@@ -1,0 +1,307 @@
+Chapter 3 Exercises:
+
+Part A:
+a) b will have garbage, c will have 200
+b) b = 300, c = 200
+c) Nothing is printed
+d) x and y are equal
+e) x = 10, y = 10, z = 0
+f) C is WOW
+
+Part B:
+a) Incorrect equality operator
+b) Extra parentheses
+e) Incorrect equality operator 
+
+Part C:
+a)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main( ) { 
+	int cost_price, selling_price;
+	printf("Enter cost price and selling price (with spaces): ");
+	scanf("%d %d", &cost_price, &selling_price);
+
+	int res = selling_price - cost_price;
+	if (res >  0) {
+		printf("Seller has made profit: %d", res);
+	} else {
+		printf("Seller has suffered loss: %d", res);		
+		printf("Seller has made profit: %d", res);
+	}
+
+}	
+
+b) 
+#include <stdio.h>
+#include <stdlib.h>
+
+int main( ) { 
+	int num;
+	printf("Enter a number: ");
+	scanf("%d", &num);
+
+	if (num % 2 == 0) {
+		printf("Number is even");
+	} else {
+		printf("Number is odd");
+	}
+
+}	
+
+c)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main( ) { 
+	int year;
+
+	printf("Enter the year to check if it's leap or not: ");
+	scanf("%d", &year);
+
+	if (year % 4 == 0) {
+		printf("It is a leap year");
+	} else {
+		printf("It is not a leap year");
+	}
+
+
+}	
+
+
+d)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main( ) { 
+	int year, q, m, K, J, day;
+
+	printf("Enter an year: ");
+	scanf("%d", &year);
+
+	// Using Zeller's Congruence
+	// (3 = March, 4 = April, 5 = May, ..., 14 = February)
+	q = 1; // Hardcoded for 1/1/year
+	m = 13; // Hardcoded for January
+	K = (year-1) % 100;
+	J = (year-1) / 100;
+	day = (q + ((13*(m+1))/5) + K + (K/4) + (J/4) + (5*J) ) % 7;
+
+	// (0 = Saturday, 1 = Sunday, 2 = Monday, ..., 6 = Friday)
+	switch (day) {
+		case 0: printf("Day on 1/1/%d is Saturday.\n", year); break;
+		case 1: printf("Day on 1/1/%d is Sunday.\n", year);  break;
+		case 2: printf("Day on 1/1/%d is Monday.\n", year);  break;
+		case 3: printf("Day on 1/1/%d is Tuesday.\n", year);  break;
+		case 4: printf("Day on 1/1/%d is Wednesday.\n", year);  break;
+		case 5: printf("Day on 1/1/%d is Thursday.\n", year);  break;
+		case 6: printf("Day on 1/1/%d is Friday.\n", year);  break;
+		default: printf("Something went wrong! This is the calculated day: %d", day); break;
+	}
+
+	return 0;
+}	
+
+
+
+e) 
+#include <stdio.h>
+#include <stdlib.h>
+
+int main( ) { 
+	int num, rev_num = 0;
+	printf("Enter a number: ");
+	scanf("%d", &num);
+	while (num > 0) {
+		rev_num = rev_num*10 + num%10;
+		num = num / 10;
+	}
+
+	if (num == rev_num) {
+		printf("Reverse number program failed!");
+	} else {
+		printf("Number reversal succeeded\n");
+		printf("Reversed Number: %d\n", rev_num);
+	}
+
+}	
+
+
+
+f)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int age_r, age_s, age_a;	
+	printf("Enter ages of Ram, Shyam and Ajay (with spaces): ");
+	scanf("%d %d %d", &age_r, &age_s, &age_a);
+
+	if (age_r < age_s && age_r < age_a) {
+		printf("Ram is the youngest of the three");
+	} else if (age_s < age_r && age_s < age_a) {
+		printf("Shyam is the youngest of the three");
+	} else {
+		printf("Ajay is the youngest of the three");
+	}
+}
+
+
+g)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int angle1, angle2, angle3;
+	printf("Enter the three angles of a triangle: \n");
+	scanf("%d %d %d", &angle1, &angle2, &angle3);
+
+	int sum =  angle1 + angle2 + angle3;
+	if ( sum != 180) {
+		printf("Triangle is invalid having angle sum equal to %d", sum);
+	} else {
+		printf("Triangle is valid having angle sum equal to %d", sum);
+	}
+}
+
+h)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int num;
+	printf("Enter a number: ");
+	scanf("%d", &num);
+
+	printf("Absolute value is: %db", abs(num));
+}
+
+
+i)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int length, breadth;
+	printf("Enter the length and breadth of a rectangle: ");
+	scanf("%d %d", &length, &breadth);
+
+	int area = length*breadth;
+	int perimeter = 2* (length+breadth);
+
+	if (area > perimeter) {
+		printf("Area is greater than perimeter");
+	} else {
+		printf("Area is not greater than perimeter");
+	}
+
+}
+
+j)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	float x1, y1;
+	float x2, y2;
+	float x3, y3;
+
+	printf("Enter all six points separated by spaces: ");
+	scanf("%f %f %f %f %f %f", &x1, &y1, &x2, &y2, &x3, &y3);
+
+	printf("We calculate Slope AB and Slope BC");
+
+	float slope_ab = (y2 - y1)/ (x2 - x1);
+	float slope_bc = (y3 - y2)/ (x3 - x2);
+
+	printf("SlopeAB: %f, SlopeBC: %f", slope_ab, slope_bc);
+
+	if (slope_ab == slope_bc) {
+		printf("All three points lie on the same line");
+	} else {
+		printf("All three points don't lie on the same line");
+	}
+}
+
+
+k)
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+	int x, y, cx, cy, radius;
+	printf("Enter x & y coordinates of the center of a circle, separated by radius: ");
+	scanf("%d %d %d", &cx, &cy, &radius);
+	
+	printf("Enter x & y coordinates of a point: ");
+	scanf("%d %d",&x, &y);
+	// Equation: (x-cx)^2 + (y-cy)^2 = r^2
+	float eq_lhs = pow(x-cx, 2.0) + pow(y-cy, 2.0);
+	float eq_rhs = 	pow(radius, 2.0);
+
+	if (eq_lhs == eq_rhs) {
+		printf("Point lies on the circle");
+	} else if (eq_lhs < eq_rhs) {
+		printf("Point lies inside the circle");
+	} else {
+		printf("Point lies outside the circle");
+	}
+}
+
+
+l)
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+	int x, y;
+	printf("Enter x & y coordinates of a point: ");
+	scanf("%d %d",&x, &y);
+
+	if (x == 0) {
+		printf("Point lies on the y-axis");
+	} else if (y == 0) {
+		printf("Point lies on the x-axis");
+	} else if (x == 0 && y == 0) {
+		printf("Point lies on the origin");
+	} else {
+		printf("Point is neither on x-axis, y-axis or the origin");
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
