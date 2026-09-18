@@ -1,0 +1,449 @@
+Chapter 4 Exercises:
+
+Part A:
+b) 0
+c) 1
+d) 1
+e) 1
+
+Part B:
+a) Dean of students affairs (because i = 5 will always give true)
+b) w = 1 x = 0 y = 1 z = 1
+c) biggest = 45
+d) -1 1
+e) Random value every time since, num is not initialized to anything giving garbage value each time
+f) 30 (since, num's value remains unchanged)
+
+Part C:
+b) 'or' should be used as '||'
+c) Incorrect syntax with logical operators
+d) 'and' should be used as '&'
+g) Ternary operators can't be used inside quotation marks. Plus, missing print arg for %c
+h) Gives lvalue required error. We need parentheses around j = 15. Otherwise, compiler thinks 15 is being assigned to the left of the second '='.
+i) Incomplete conditional operator
+j) Incorrect semicolon placement after each statement in ternary operator
+
+Part D:
+a)
+ # include <stdio.h> 
+int main( ) { 
+	int year;
+	printf("Enter the year: ");
+	scanf("%d", &year);
+
+	if ((year % 4 == 0) || ( (year % 100 == 0 ) && (year % 400 == 0) ) ) {
+		printf("It is a leap year");
+	} else {
+		printf("It is not a leap year");
+	}
+} 
+
+b) 
+#include <stdio.h> 
+#include <stdlib.h>
+
+int main( ) {
+	char character;
+
+	printf("Enter any character: ");
+	scanf("%c", &character);
+
+	if (character >= 65 && character <= 90)
+		printf("It is an uppercase character");
+	else if (character >= 97 && character <= 122)
+		printf("It is a lowercase character");
+	else if (character >= 48 && character <= 57)
+		printf("It is a number");
+	else if ( (character >= 0 && character <= 47) || ( character >=58 && character <= 64) 
+		|| (character >= 91 && character <= 96) || (character >= 123 && character <= 127))
+		printf("It is a special character");
+	else
+		printf("Unknown character");
+
+	return 0;
+} 
+
+c)
+#include <stdio.h> 
+#include <stdlib.h>
+
+int main( ) {
+	int hardness, t_strn;
+	float c_cont;
+	printf("Enter values for hardness, carbon content and tensile strength of steel: ");
+	scanf("%d %f %d", &hardness, &c_cont, &t_strn);
+
+	if (hardness > 50 && c_cont < 0.7 && t_strn > 5600)
+		printf("Grade 10");
+	else if (hardness > 50 && c_cont < 0.7 && t_strn <= 5600)
+		printf("Grade 9");
+	else if (hardness <= 50 && c_cont < 0.7 && t_strn > 5600)
+		printf("Grade 8");
+	else if (hardness > 50 && c_cont >= 0.7 && t_strn > 5600)
+		printf("Grade 7");
+	else if (hardness > 50 || c_cont < 0.7 || t_strn > 5600)
+		printf("Grade 6");
+	else
+		printf("Grade 5");
+
+	return 0;
+} 
+
+d) 
+#include <stdio.h> 
+#include <stdlib.h>
+
+int main( ) {
+	int side1, side2, side3;
+	printf("Enter the three sides of a triangle (with spaces): ");
+	scanf("%d %d %d", &side1, &side2, &side3);
+
+	int max_side;
+
+	if (side1 > side2 && side1 > side3)
+		max_side = 1;
+	else if (side2 > side1 && side2 > side3)
+		max_side = 2;		   
+	else
+		max_side = 3;
+
+	if (max_side == 1) {
+		if (side1 < (side2+side3)) {
+			printf("Max side is side%d: %d\n", max_side, side1);
+			printf("Triangle is valid\n");			
+		} else {
+			printf("Triangle is invalid\n");
+		}
+	} else if (max_side == 2) {
+		if (side2 < (side1+side3)) {
+			printf("Max side is side%d: %d\n", max_side, side2);
+			printf("Triangle is valid\n");			
+		} else {
+			printf("Triangle is invalid\n");
+		}
+	} else {
+		if (side3 > (side1+side2)) {
+			printf("Max side is side%d: %d\n", max_side, side3);
+			printf("Triangle is valid\n");			
+		} else {
+			printf("Triangle is invalid\n");
+		}
+
+	}
+
+	return 0;
+} 
+
+
+e) 
+#include <stdio.h> 
+#include <stdlib.h>
+#include <math.h>
+
+int main( ) {
+	int side1, side2, side3, h_sq, b_p_sq;
+	printf("Enter the three sides of a triangle in descending order (with spaces): ");
+	scanf("%d %d %d", &side1, &side2, &side3);
+
+	if (side1 == side2 && side2 == side3)
+		printf("Triangle is equilateral.\n");
+	else if ((side1 == side2) || (side2 == side3) || (side1 == side3))
+		printf("Triangle is isosceles\n");
+	else
+		printf("Triangle is scalene.\n");
+
+	h_sq = pow(side1, 2.0);
+	b_p_sq = pow(side2, 2.0) + pow(side3, 2.0);
+	if (h_sq == b_p_sq)
+		printf("Triangle is also a right-angle triangle.\n");
+
+	return 0;
+} 
+
+f) 
+#include <stdio.h>
+#include <stdlib.h>
+
+int main( ) { 
+	int weight;
+
+	printf("Enter the weight of the boxer: ");
+	scanf("%d", &weight);
+
+	if (weight < 115)
+		printf("Flyweight\n");
+	else if (weight >= 115 && weight <= 121) 
+		printf("Bantamweight\n");
+	else if (weight > 122 && weight <= 153) 
+		printf("Featherweight\n");
+	else if (weight >= 154 && weight <= 189) 
+		printf("Middleweight\n");
+	else 
+		printf("Heavyweight\n");
+
+	return 0;
+}	
+
+
+g)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main( ) { 
+	float R,G,B;
+	float R_div, G_div, B_div;
+	float C, M, Y, K;
+	float white;
+
+	printf("Enter values of in RGB format separated by spaces: ");
+	scanf("%f %f %f", &R, &G, &B);
+
+	if (R < 0 || G < 0 || B < 0) 
+		printf("RGB values cannot be negative!\n");
+		return 1;
+
+	if (R > 255 || G > 255 || B > 255)
+		printf("RGB values cannot be greater than 255!\n");
+
+	if (R == 0 && G == 0 && B == 0) 
+		printf("Corresponding C, M, Y, K values are 0, 0, 0 and 1 respectively\n");
+
+
+	// Finding max for white
+	R_div = R/255;
+	G_div = G/255;
+	B_div = B/255;
+
+	if (R_div > G_div && R_div > B_div) white = R_div;
+	else if (G_div > R_div && G_div > B_div) white = G_div;
+	else white = B_div;
+
+	C = ( (white - R_div) / white);
+	M = ( (white - G_div) / white);
+	Y = ( (white - B_div) / white);
+	K = 1 - white; // Black
+
+	printf("Corresponding C, M, Y, K values are %d, %d, %d and %d respectively\n", &C, &M, &Y, &K);
+
+	return 0;
+}	
+
+
+h)
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main() {
+	int month, date; // of birth
+	printf("Enter the date and month of your birthday in the format (12 9): ");
+	scanf("%d", month, date);
+
+	if (month == 1) {
+		if (date < 20) 
+			printf("Your Zodiac Sign is Capricorn\n");
+		else 
+			printf("Your Zodiac Sign is Sagittarius\n");
+	} 
+	else if (month == 2) {
+		if (date < 18) 
+			printf("Your Zodiac Sign is Aquarius\n");
+		else 
+			printf("Your Zodiac Sign is Pisces\n");
+	} 
+	else if (month == 3) {
+		if (date < 20) 
+			printf("Your Zodiac Sign is Pisces\n", );
+		else 
+			printf("Your Zodiac Sign is Aries\n");
+	}
+	else if (month == 4) {
+		if (date < 20) 
+			printf("Your Zodiac Sign is Aries\n");
+		else 
+			printf("Your Zodiac Sign is Taurus\n");
+	}
+	else if (month == 5) {
+		if (date < 21) 
+			printf("Your Zodiac Sign is Taurus\n");
+		else 
+			printf("Your Zodiac Sign is Gemini\n");
+	} 
+	else if (month == 6) {
+		if (date < 21) 
+			printf("Your Zodiac Sign is Gemini\n");
+		else 
+			printf("Your Zodiac Sign is Cancer\n");
+	}
+	else if (month == 7) {
+		if (date < 23) 
+			printf("Your Zodiac Sign is Cancer\n");
+		else
+			printf("Your Zodiac Sign is Leo\n");
+	}
+	else if (month == 8) {
+		if (date < 23)
+			printf("Your Zodiac Sign is Leo\n");
+		else
+			printf("Your Zodiac Sign is Virgo\n");
+	}
+	else if (month == 9) {
+		if (date < 23) 
+			printf("Your Zodiac Sign is Virgo\n");
+		else 
+			printf("Your Zodiac Sign is Libra\n");
+	} 
+	else if (month == 10) {
+		if (date < 23) 
+			printf("Your Zodiac Sign is Libra\n");
+		else 
+			printf("Your Zodiac Sign is Scorpio\n");
+	} 
+	else if (month == 11) {
+		if (date < 22) 
+			printf("Your Zodiac Sign is Scorpio\n");
+		else 
+			printf("Your Zodiac Sign is Sagittarius\n");
+	} 
+	else if (month == 12) {
+		if (date < 22) 
+			printf("Your Zodiac Sign is Sagittarius\n");
+		else 
+			printf("Your Zodiac Sign is Capricorn\n");
+	}
+	else {
+		printf("Please enter correct month and date!");
+		return 1;
+	}
+
+	return 0;
+}
+
+i)
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+	float weight, height;
+	float bmi;
+	printf("Enter weight (in kgs) and height (in meters) separated by spaces: ");
+	scanf("%f %f"if (bmi < 15) 
+		printf("Your BMI category is Starvation"); , &weight, &height);
+
+	bmi = weight/(pow(height, 2.0));
+
+	if (bmi < 15) 
+		printf("Your BMI category is Starvation\n");
+	else if (bmi >= 15.1 && bmi <= 17.5) 
+		printf("Your BMI category is Anorexic\n");
+	else if (bmi >= 17.6 && bmi <= 18.5) 
+		printf("Your BMI category is Underweight\n");
+	else if (bmi >= 18.6 && bmi <= 24.9) 
+		printf("Your BMI category is Ideal\n"); 
+	else if (bmi >= 25 && bmi <= 25.9)
+		printf("Your BMI category is Overweight\n"); 
+	else if (bmi >= 30 && bmi <= 30.9) 
+		printf("Your BMI category is Obese\n");
+	else 
+		printf("Your BMI category is Morbidly Obese\n"); 
+}
+
+
+Part E:
+a) 
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	char character;
+
+	printf("Enter a character: ");
+	scanf("%c", &character);
+
+	(character >= 97 && character <= 122) ? printf("Character is lowercase!\n") 
+	: ( (!(character >= 65 && character <= 90)) && (!(character >= 48 && character <= 57))) 
+		? printf("Character is special character!\n") : printf("Character is not special\n");
+
+	return 0;
+
+}
+
+b) 
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int year;
+
+	printf("Enter the year: ");
+	scanf("%d", &year);
+
+	(year % 4 == 0) ? printf("The year is a leap year!") : printf("The year is not a leap year!");
+
+	return 0;
+}
+
+
+c) 
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int num1, num2, num3, greatest_num;
+	
+	printf("Enter three numbers (with spaces): ");
+	scanf("%d %d %d", &num1, &num2, &num3);
+
+	greatest_num = (num1 > num2 && num1 > num3) ? num1 : (num2 > num1 && num2 > num3) ? num2 : num3;
+
+	printf("The biggest number of these three is: %d", greatest_num);
+
+	return 0;
+}
+
+
+d)
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+#ifndef M_PI
+#define M_PI 3.14159265358979323846 
+#endif
+
+int main() {
+	double angle, rad_angle, sq_sin, sq_cos, sum;
+
+	printf("Enter an angle: ");
+	scanf("%lf", &angle);
+
+	rad_angle = (angle*M_PI)/180;
+	sq_sin = pow(sin(rad_angle), 2.0);
+	sq_cos = pow(cos(rad_angle), 2.0);
+	sum = sq_sin + sq_cos;
+	(fabs(sum - 1) < 1e-9) ? printf("Sin(%.2f)+Cos(%.2f)=1!\n", angle, angle) : printf("Sum of Sin(%f) and Cos(%f) is not equal to 1!\n", angle, angle);
+	
+	return 0;
+
+}
+
+
+e) 
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    float sal;
+    printf("Enter the salary: ");
+    scanf("%f", &sal);
+
+    (sal >= 25000 && sal <= 40000) ? printf("Manager\n") : (sal >=15000 && sal < 25000) ? printf("Accountant\n") : printf("Clerk\n");
+    
+    return 0;
+}
+
+
+
+
+
