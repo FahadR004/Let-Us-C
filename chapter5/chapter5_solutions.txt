@@ -1,0 +1,325 @@
+Chapter5 Exercises:
+
+Part A:
+a)
+1
+2
+3
+4
+5
+6
+7
+8
+9 
+10
+
+b)
+4 3 4 is the incorrect answer.
+2 3 3 is the correct answer
+
+c)
+3 3 1
+
+d)
+malayalam is a palindrome
+(Infinite loop)
+
+e)
+10
+10
+10
+10
+10
+...
+(Infinite Loop)
+
+f)
+Nothing happens
+
+Part B:
+a) 
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int i, overtime_hrs;
+	int overtime_pay = 12;
+
+	for (i = 1; i <= 10; i++) {
+		printf("Enter employee %d's overtime hours: ", i);
+		scanf("%d", &overtime_hrs);
+
+		printf("Extra overtime pay is: ", overtime_hrs*0.75*12);
+
+	}
+}
+
+b)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int n, fact = 1, user_input;
+	printf("Enter a number: ");
+	scanf("%d", &n);
+
+	if (n < 0) {
+		printf("Value cannot be negative!\n");
+	  	return 1;
+	}
+
+	user_input = n;
+
+	while (n > 0) {
+		fact = fact*n;
+		n--;
+	}
+
+	printf("The factorial of %d is %d\n", user_input, fact);
+	
+	return 0;
+}
+
+c)
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+	int num1, num2;
+	
+	printf("Enter two numbers (separated by spaces): ");
+	scanf("%d %d", &num1, &num2);
+
+	// // Using pow
+	// printf("The number %d to the power of %d is: %.2f\n", num1, num2, pow(num1, num2));	
+
+	// Using while loop
+	// int count = 0;
+	int power = 1;
+	// while (count < num2) {
+	// 	power = power*num1;
+	// 	count++;
+	// }
+
+	for (int i = 0; i < num2; i++) {
+		power = power*num1;
+	}
+
+	printf("The number %d to the power of %d is: %d\n", num1, num2, power);	
+	
+	return 0;
+
+}
+
+
+d)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int c = 0;
+	
+	while (c <= 255) {
+		printf("ASCII Value = %d, Character = %c \n", c, c);
+		c++;
+	}
+	
+	return 0;
+}
+
+e)
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+	int sum = 0, n = 1;
+
+	while (n <= 500) {
+		int temp = n;
+		int digit;
+		while (temp != 0) {
+			digit = temp % 10;
+			sum += pow(digit, 3.0);
+			temp = temp/10;
+		}
+		if (sum == n) 
+			printf("%d is an Armstrong number\n", n);
+		sum = 0;
+		n++;
+	}
+
+
+	return 0;
+}
+
+f)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int matchsticks = 21;
+	int user_input;
+
+	while (matchsticks > 0) {
+		printf("Enter the number of matchsticks: ");
+		scanf("%d", &user_input);
+		
+		if (user_input < 1 || user_input > 4) {
+			printf("Please enter a value between 1 and 4\n");
+			return 1;
+		}
+
+		matchsticks -= user_input;
+
+		if (matchsticks == 0) break;
+
+		printf("Computer picks %d matchsticks...\n", matchsticks - 1);
+		matchsticks  = matchsticks - (matchsticks - 1);		
+
+		printf("Total matchsticks remaining: %d\n", matchsticks);
+	}
+	printf("You picked the last matchstick! Computer won!\n");
+}
+
+
+g)
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+int main() {
+	int num, pos_count, neg_count, zero_count;
+	num = pos_count = neg_count = zero_count = 0;
+	while (true) {
+		printf("Enter a number (type anything else to stop): ");
+		if (scanf("%d", &num) == 1) {
+			(num > 0) ? pos_count++ : (num < 0) ? neg_count++ : (zero_count++);
+			printf("Number entered correctly!\n");
+			printf("Please type another number...\n");
+		} else {
+			printf("Exiting...\n");
+			break;			
+		}
+	}
+	printf("Positive Count: %d, Negative Count: %d, Zero Count: %d\n", pos_count, neg_count, zero_count);
+}	
+
+h)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main () {
+	int num, remainder, count = 1, octal = 0;
+
+	printf("Enter a number: ");
+	scanf("%d", &num);
+
+	// Best way to do this if simply finding equivalent and printing
+	// printf("Octal equivalent: %o\n", num);
+
+	// Second way
+	// int num, temp, rev = 0, octal = 0; // For first loop
+	// while (temp != 0) {
+	// 	rev = rev*10 + temp % 8;
+	// 	temp = temp/8;
+	// }
+
+	// while (rev != 0) {
+	// 	octal = octal*10 + rev%10;
+	// 	rev = rev/10;
+	// }
+	// octal = (num == 8 || num == 9) ? (octal+10) : (octal);
+
+	// Best 
+	while (num != 0) {
+		remainder = num % 8;
+		octal += remainder*count;
+		count *= 10;
+		num = num/8;
+	}
+
+	printf("Octal equivalent: %d\n", octal);
+}
+
+j)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int small_num, big_num, temp;
+
+	printf("Enter the smallest and biggest number of a range to see all values in between: ");
+	scanf("%d %d", &small_num, &big_num);
+
+	temp = small_num;
+	printf("Range of %d-%d is: ", small_num, big_num);
+	while (temp <= big_num) {
+		printf("%d ", temp);
+		temp++;
+	}
+	printf("\n");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
