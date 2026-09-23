@@ -1,0 +1,443 @@
+Chapter 6 Exercises:
+
+Part A: 
+a) Nothing prints because i = 0 making condition false
+
+b) Infinite 1's
+There's a semicolon after the for loop, thus creating an infinite loop of 1's.
+Interestingly, if you remove the semi-colon, the print statements run from 2-6. This is because the print statement is placed in place of the increment counter, which happens at the very end of every iteration. Thus, i is already incremented when the incrementation part (in this case, the print) happens
+
+c) 2
+After 1'st iteration, loop returns with 0.
+
+Part B:
+a) initialize, test, increment
+
+b) for loop
+
+c) At least once
+
+d) Initialization, Execution of Body, Testing
+
+e) 3
+
+f) continue
+
+g) It will be stuck in the while loop, executing infinitely.
+
+h) The ; after the if (x!=y) would not produce an error.
+For 2, the program does not produce the output x = 10, y = 10 because it fails to compile. The i is not initialized.
+
+i) 2,3
+
+Part C:
+a)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main () {
+	int flag = 0;
+	for (int i = 2; i <= 300; i++) {
+		for (int j = 2; j < i; j++) {
+			if (i % j == 0) {
+				flag = 1;
+				break;
+			}
+		}	
+		if (!flag) printf("%d is a prime number\n", i);
+		flag = 0;
+	}
+}
+
+b)
+#include <stdio.h>
+#include <stdlib.h>
+
+// In any regular ASCII set, ASCII character 1 represents a control character for the Start of Heading. The smiling face with ASCII value 1 belongs to an extended character set for MS-DOS consoles only. Hence, we use unicode for the smiling face
+
+
+int main() {
+	int i,j;
+
+	for (i = 0; i <= 100; i++) {
+		for (j = 0; j <= 100; j++) {
+			printf("%s", "\u263A");
+		}
+		printf("\n");
+	}
+
+	return 0;
+}
+
+Reference: https://stackoverflow.com/questions/61912226/write-a-program-to-fill-the-entire-screen-with-a-smiling-face-the-smiling-face 
+
+c)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int i, j;
+	float fact, sum = 0;
+	for (i = 1; i <= 7; i++) {
+		fact = 1;
+		for (j = i; j > 0; j--){
+			fact = fact*j;
+		}
+		sum += i/fact;
+		printf("%d/%.0f = %.2f | ", i, fact, i/fact);
+	}
+	printf("Sum of First Seven Terms is : %.2f\n", sum);
+
+	return 0;
+}
+
+d)
+#include <stdio.h>
+#include <stdlib.h>
+
+// 1  2  3
+// 1  3  2
+// 2  1  3
+// 2  3  1
+// 3  1  2
+// 3  2  1
+
+int main() {
+	int i, j, k;
+	int n = 3;
+
+	for (i = 1; i <= n; i++) {
+		for (j = 1; j <= n; j++) {
+			for (k = 1; k <= n; k++) {
+				// if (i != j && j != k && i != k)
+					printf("%d %d %d\n", i, j, k);
+			}	
+		}
+	}
+
+	return 0;
+
+}
+
+e)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int p_amt = 6000;
+	float alt_prcnt = 0.09; // 9%
+	int alt_invst = p_amt*alt_prcnt;
+	int earning_per_year = 1000;
+	int year_count = 1;
+
+	while (earning_per_year < alt_invst)
+		year_count++;
+
+	printf("Minimum number of years required: %d\n", year_count);
+
+	return 0;
+}
+
+ec)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int num;
+	
+	printf("Enter a number to get it's multiplication table: ");
+	scanf("%d", &num);
+
+	for (int i = 1; i <= 10; i++) 
+		printf("%d * %d = %d\n", num, i, num*i);
+}
+
+f)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	float i, x;
+	int y;
+
+	for (y = 1; y <= 6; y++) {
+		for (x = 5.5f; x <= 12.5f; x += 0.5) {
+			i = 2 + (y + 0.5*x);
+			printf("i = 2 + (%d + 0.5*%f) = %f\n", y, x, i);
+		}
+	}
+
+	return 0;
+
+}
+
+g)
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+	float p, r, n, q, a;
+
+	for (int i = 0; i < 10; i++) {
+		printf("Enter values of p, r, n and q (with spaces): ");
+		scanf("%f %f %f %f", &p, &r, &n, &q);
+		a = pow((p*(1 + r/q)), n*q);	
+		printf("Value of a = (p*(1 + r/q))^nq = %f\n", a);
+	}
+}
+
+
+h)
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+	int iterations = 7;
+	float x, res;
+	float half_value;
+
+	printf("Enter value of x: ");
+	scanf("%f", &x);
+
+	for (int i = 0; i < iterations; i++) {
+		half_value = (i == 0) ? 1 : (0.5);
+		res = (half_value) * pow( (x-1)/x, i+1 );
+		printf("Term %d: %.2f*(((x-1)/x)^%d) = %f\n", i+1, half_value, i+1, res);
+	}
+}
+
+i) 
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+   // int n = 3; // length of array
+   // int k = 2; // values range from 0 to k
+   // int total = pow(k + 1, n);
+   // for (int row = 0; row < total; row++) {
+   //     for (int col = n - 1; col >= 0; col--) {
+   //         int divisor = pow(k + 1, col);
+   //         int value = (row / divisor) % (k + 1);
+   //         printf("%d ", value);
+   //     }
+   //     printf("\n");
+   // }
+	int a, b, c;
+
+	for (a = 1; a <= 30; a++) {
+		for (b = a; b <= 30; b++) {
+			for (c = b; c <= 30; c++) {
+				// int lhs = pow(c, 2.0); // This prints duplicates
+				// int rhs = pow(a, 2.0) + pow(b, 2.0);
+				int lhs = a*a + b*b;
+				int rhs = c*c;
+				if (lhs == rhs) printf("%d^2 = %d^2 + %d^2\n", a, b, c);
+			}
+		}
+	}
+	return 0;
+}
+
+j)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	float pop = 10000;
+	printf("Population Today: %f\n", pop);
+	for (int i = 10; i > 0; i--) {
+		pop = pop - pop*0.1;
+		printf("Population in Year %d: %f\n", i, pop);
+	}	
+
+	// // float pop = 3486.784668;
+	// printf("Population Today: %f\n", pop);
+	// for (int i = 1; i <= 11; i++) {
+	// 	pop = pop + pop*0.1;
+	// 	printf("Population in Year %d: %f\n", i, pop);
+	// }	
+
+}
+
+k)
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+	int a, b, c, d;
+	int limit = 50;
+	
+	for (a = 1; a < limit; a++) {
+		for (b = 1; b < limit; b++) {
+			for (c = 1; c < limit; c++) {
+				for (d = 1; d < limit; d++) {
+					if (a != b && a != c && a != d && b != c && b != d && c != d) {
+						int x = pow(a, 3) + pow(b, 3);
+						int y = pow(c, 3) + pow(d, 3);
+						if (x == y) {
+							printf("For the numbers, a=%d, b=%d, c=%d, d=%d: ", a, b, c, d);
+							printf("the number is: %d\n", x);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+l)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int i;
+    for (i = 0; i < 24; i++) {
+        if (i == 0) 
+            printf("00:00 AM MIDNIGHT\n");
+        else if (i < 12) 
+            printf("%s%d:00 AM\n", (i < 10) ? "0" : "", i);
+        else if (i == 12)
+            printf("12:00 PM NOON\n");
+        else
+            printf("%d:00 PM\n", i);
+    }   
+}
+
+
+m)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int i, j;
+	int count = 1; 
+	int lines = 1;
+
+	while (lines <= 4) {
+		for (i = 5; i > lines; i--) {
+			printf(" ");
+		}
+		for (j = 1; j <= lines; j++) {
+			printf("%d ", count);
+			count++;
+		}
+		printf("\n");
+		lines++;
+	}
+}
+
+
+n)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int i, j, k;
+	char min = 'A';
+	char max = 'G';
+	int spaces = 1;
+	int lines = max-min+1;
+	int char_iter = 0;
+
+	while (lines > 0) {
+		for (i = min; i < max; i++) {
+			printf("%c ", i);
+		}	
+		char_iter = i;
+
+		for (j = 2; j < spaces; j++) {
+			printf("  ");
+		}
+
+		if (spaces == 1) printf("%c ", max);
+
+		for (k = char_iter-1; k >= min; k--) 
+			printf("%c ", k);
+
+		printf("\n");
+
+		if (spaces != 1) max--;
+
+		spaces+=2;
+		lines--;
+	}
+}
+
+
+o)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int i, j;
+	// 1-based indexing
+	int max = 6;
+	int lines = 1;
+	int current_val = 1;	
+
+	while (lines <= max) {
+		for (i = max; i > lines; i--) {
+			printf(" ");
+		}
+		for (j = 1; current_val != 0; j++) {
+			printf("%d ", current_val);
+			current_val = (current_val * (lines - j))/j;
+		}
+		printf("\n");
+		current_val = 1;
+		lines++;
+	}
+	
+	// Zero-Based Indexing
+	// int i,j;
+	// int max = 6;
+	// int lines = 0;
+	// int current_val = 1;	
+
+	// while (lines < max) {
+	// 	for (i = max; i > lines; i--) {
+	// 		printf(" ");
+	// 	}
+	// 	for (j = 0; current_val != 0; j++) {
+	// 		printf("%d ", current_val);
+	// 		current_val = (current_val * (lines - j))/(j+1);
+	// 	}
+	// 	printf("\n");
+	// 	current_val = 1;
+	// 	lines++;
+	// }
+
+	// while (lines <= max) {
+	// 	for (i = max; i > lines; i--) {
+	// 		printf(" ");
+	// 	}
+	// 	for (j = 1; j <= lines; j++) {
+	// 		if (lines < 3) printf("1 ");
+	// 		else {
+	// 				mid = lines / 2 + 1;
+	// 				if (j == 1 || j == lines) {
+	// 					printf("1 ");
+	// 				} else if (lines % 2 == 0 && (j == mid || j == (mid-1))) {
+	// 					printf("%d ", even+odd);
+	// 					even++;
+	// 					odd++;
+	// 				}
+	// 				else if (lines % 2 != 0 && (j == mid)) {
+	// 				  printf("%d ", even + odd);
+	// 					even++;
+	// 					odd++;
+	// 				} 
+	// 		}
+	// 	}
+	// 	printf("\n");
+	// 	lines++;
+	// }
+}	
+
+
+
+
