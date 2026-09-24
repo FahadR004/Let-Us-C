@@ -1,0 +1,190 @@
+Chapter 7 
+
+Go through the program carefully and find out how it works. Also write a 
+program to implement the same logic without using goto.
+
+# include <stdio.h> 
+int main( ) 
+{ 
+int  i, j, k ;  
+for ( i = 1 ; i <= 3 ; i++ ) 
+{ 
+for ( j = 1 ; j <= 3 ; j++ ) 
+{ 
+for ( k = 1 ; k <= 3 ; k++ ) 
+{ 
+if ( i == 3 && j == 3 && k == 3 ) 
+goto out ; 
+else
+
+
+Equivalent Code without goto:
+#include <stdio.h> 
+int main()  { 
+	int  i, j, k ;  
+	for ( i = 1 ; i <= 3 ; i++ ) 
+	{ 
+		for ( j = 1 ; j <= 3 ; j++ ) 
+		{ 
+			for ( k = 1 ; k <= 3 ; k++ ) 
+			{	 
+				if ( i == 3 && j == 3 && k == 3 ) 
+					break;
+				else
+					printf ( "%d %d %d\n", i, j, k ) ; 
+			} 
+		} 
+	} 
+ 
+	return 0 ; 
+}
+
+
+
+Exercises:
+Part A:
+
+a) Heart
+   I thought one wears a suite
+
+b) You always lose the gold prize
+
+c) At least employees are good
+
+d) Trapped // The type assigned to k is an int, so j+1 becomes an int and hence, the switch works. Otherwise the switch does not work.
+
+e) You entered a and b
+
+f) Feeding fish
+   Weeding grass
+   Mending roof
+   Just to survive
+
+Part B:
+a) Semi-colon after switch and case statements
+b) Inequalities inside case statement
+c) floats cannot be used inside switch statements
+d) Variables cannot be used in the case statement
+
+Part C:
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	int choice, num, i, fact, prime, flag;
+
+	while (choice != 4) {
+		printf("=========== MENU ==============\n");
+		printf("You can get: \n");
+		printf("1) Factorial of a number\n");
+		printf("2) Prime or not\n");
+		printf("3) Odd or even\n");
+		printf("4) Exit\n");
+
+		printf("Enter your choice: ");
+		scanf("%d", &choice);
+
+		if (choice == 4) {
+			printf("Exited\n");
+			break;
+		}
+
+		printf("Enter a number: ");
+		scanf("%d", &num);
+
+		switch (choice) {
+			case 1:
+				fact = 1;
+				for (i = 1; i <= num; i++) {
+					fact = fact* i;
+				}
+				printf("The factorial of %d is %d\n", num, fact);
+				break;
+			case 2:
+				flag = 0;
+				prime = 2;
+				while (prime != num) {
+					if (num % prime == 0) {
+						flag = 1;
+						break;
+					}
+					prime++;
+				}
+				if (!flag)
+					printf("%d is a prime number\n", num);
+				else 	
+					printf("%d is not a prime number\n", num);
+				break;
+
+			case 3:
+				if (num % 2 == 0) 
+					printf("%d is a even number\n", num);
+				else 
+					printf("%d is an odd number\n", num);
+				
+				break;
+			
+			// case 4:
+			// 	printf("Exited...");
+			// 	break;
+
+			default: 
+				printf("Please enter a valid option \n");
+				break;
+		}
+
+	}
+}
+
+
+Part D:
+#include <stdio.h>
+#include <stdlib.h>
+
+int main () {
+	int class, subj_failed;
+
+	printf("Enter class of student: ");
+	scanf("%d", &class);
+
+	printf("Enter number of subjects failed by student: ");
+	scanf("%d", &subj_failed);
+
+	switch (class) {
+		case 1:
+			printf("Student is of first class\n");
+			if (subj_failed > 3)
+				printf("No grace marks for student!\n");
+			else
+				printf("Grace marks are 5 marks per subject!\n");
+			break;
+		case 2:
+			printf("Student is of second class\n");
+			if (subj_failed > 2)
+				printf("No grace marks for student!\n");
+			else
+				printf("Grace marks are 4 marks per subject!\n");
+			break;
+		case 3:
+			if (subj_failed > 1)
+				printf("No grace marks for student!\n");
+			else
+				printf("Grace marks are 5 marks total!\n");
+			break;
+		default: 
+			printf("No grace marks for student!\n");
+			break;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
