@@ -1,0 +1,240 @@
+Chapter 8 Exercises:
+
+Part A:
+
+a) Learn C
+   Followed by C++, C# and Java
+(In an infinite loop, because display calls main)
+
+b) 100
+
+c) 3.140000
+
+d) Compilation Error: void value not ignored as it ought to be
+
+Part B:
+a) Missing semicolon after prototype declaration, functions cannot return multiple values
+b) Cannot assign void to non-void variables
+c) Missing prototype declaration
+d) Semicolon after function definition ()
+e) Cannot define functions inside another function
+f) Note that call a function inside a function argument but this particular instance fails to compile as according to the error message, it is an invalid use of void expression. Plus, message also doesn't take arguments.
+
+Part C:
+a) No, there is a semi-colon after the definition parentheses
+
+b) 
+   1. False
+   2. False (Not necessary because void functions don't need to use return and control is still transferred to the calling function)
+   3. True
+   4. False
+   5. True
+   6. True
+   7. True
+   8. False
+   9. True
+   10. False
+
+Part D:
+a)
+#include <stdio.h>
+#include <stdlib.h>
+
+int calc_fact(int);
+
+int main() {
+	int fact, num = 4;
+	fact = calc_fact(num);
+	printf("Factorial of %d is %d\n", num, fact);
+	return 0;
+}
+
+int calc_fact(int n) {
+	int i, fact = 1;
+	for (int i = 1; i <= n; i++) {
+		fact = fact*i;
+	}
+	return fact;
+}
+
+b)
+#include <stdio.h>
+#include <stdlib.h>
+
+int power(int , int);
+
+int main () {
+	int pow, a = 2, b = 4;
+	pow = power(a, b);
+	printf("Value of %d to the power of %d is %d\n", a, b, pow);
+	return 0;
+}
+
+int power(int a, int b) {
+	int i, res = 1;
+	for (i = 0; i < b; i++) {
+		res = res * a;
+	}
+	return res;
+}
+
+c)
+#include <stdio.h>
+#include <stdlib.h>
+
+int romanToInt();
+
+int main () {
+	int num, digit, temp, i, count = 0;
+
+	printf("Enter a number to get its Roman equivalent: ");
+	scanf("%d", &num);
+
+	if (num <= 0) {
+		printf("Invalid input\n");
+		return 1;
+	}
+
+	temp = num;
+	while (temp != 0) {
+		temp = temp / 10;
+		count++;
+	}
+	romanToInt(num);
+	return 0;
+}
+
+int romanToInt(int num) {
+	int I = 1;
+	int IV = 4;
+	int V = 5;
+	int IX = 9;
+	int X = 10;
+	int XL = 40;
+	int L = 50;
+	int XC = 90;
+	int C = 100;
+	int CD = 400;
+	int D = 500;
+	int CM = 900;
+	int M = 1000;
+
+	printf("The Roman Equivalent of %d is: ", num);
+	while (num != 0) {
+		if (num >= M) {
+			num -= M;
+			printf("M");
+		} else if (num >= CM) {
+			num -= CM;
+			printf("CM");
+		} else if (num >= D) {
+			num -= D;
+			printf("D");
+		} else if (num >= CD) {
+			num -= CD;
+			printf("CD");
+		} else if (num >= C) {
+			num -= C;
+			printf("C");
+		} else if (num >= XC) {
+			num -= XC;
+			printf("XC");
+		} else if (num >= L) {
+			num -= L;
+			printf("L");
+		} else if (num >= XL) {
+			num -= XL;
+			printf("XL");
+		} else if (num >= X) {
+			num -= X;
+			printf("X");
+		} else if (num >= IX) {
+			num -= IX;
+			printf("IX");
+		} else if (num >= V) {
+			num -= V;
+			printf("V");
+		} else if (num >= IV) {
+			num -= IV	;
+			printf("IV");
+		} else if (num >= I) {
+				num -= I;
+				printf("I");
+		}
+	}
+	printf("\n");
+
+}
+
+d) 
+#include <stdio.h>
+#include <stdlib.h>
+
+int check_leap( int );
+
+int main () {
+	int year, res;
+	printf("Enter a year: ");
+	scanf("%d", &year);
+
+	res = check_leap( year );
+
+	(res) ? printf("%d is a leap year\n", year) : printf("%d is not a leap year\n", year); 
+}
+
+int check_leap( int year) {
+	if (year % 4 == 0) 
+		return 1;
+	return 0;
+}
+
+e)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main () {
+	int num, factor = 2;
+	
+	printf("Enter a number: ");
+	scanf("%d", &num);
+
+	printf("Prime factors are: ");
+	while (num != 1) {
+		if (num % factor == 0){
+			num = num / factor;
+			printf("%d ", factor);
+		}
+		else 
+			factor++;
+	}
+	printf("\n");
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
