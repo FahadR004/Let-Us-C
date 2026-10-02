@@ -1,0 +1,60 @@
+Chapter 11 Exercises:
+
+a) Values of i from 1 to 50000
+b) 13.500000 13.500000
+c) main's i = 0
+   val's i = 100
+   main's i = 101
+   val's i = 100
+d) 6 5 5  X
+   6 5 6 (is correct because you're returning a+t after already adding a to t hence, t becomes 6)
+e) count = 5
+   count = 4
+   count = 3
+   count = 2
+   count = 1
+f) 6 (v = 2, v + 1(x) + b = 6)
+   9 (v = 4, v + 2(x) + b = 9)
+   13 (v = 7, v + 3(x) + b = 13)
+   18 (v = 11, v + 4(x) + b = 18)
+g) 1 1 1 (after adding missing declaration)
+   1 1 2
+h) 30 
+   20
+
+Part B:
+a) Correct format specifier is %lf
+b) Out of bounds of signed char. So, after +127, will start counting from -128 and ends up at -56.
+c) Format specifiers reversed
+d) There is no such thing as long float or unsigned double, plus the value causes an overflow
+e) No error
+
+Part C:
+a) True
+b) True
+c) False
+d) False
+e) False 
+f) False (default to auto)
+g) False (local gets preference)
+h) False
+i) False
+j) False
+k) True
+l) True
+m) False
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
