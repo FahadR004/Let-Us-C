@@ -1,0 +1,143 @@
+Chapter 12 Exercises:
+
+Chapter 12 Exercises:
+
+Part A:
+
+a) A message from the programmer to the preprocessor
+
+b) #define SQR(X) (X*X)
+
+c) 
+
+	1. True
+	2. False
+	3. False
+	4. False
+	5. False
+	6. False
+
+
+d) Any number
+
+e) For "", compiler first looks in pwd, then system paths. For <>, compiler only looks in system paths.
+
+f) Contains definitions and macros
+
+g) #elseif 
+
+h) Before compilation of the program
+
+i) Before compilation
+
+
+Part B:
+
+a) 2
+b) 7 7 12 49 (Expected: 3 16 9 16 is incorrect)
+c) 43.139999 5863.727051 (Expected: 43.14 5863.72714)
+
+
+Part C:
+
+a) Use the cpp command
+
+b) 
+#include <stdio.h> 
+#include <stdlib.h>
+#define IS_LOWERCASE(ch) (ch >= 'a' && ch <= 'z')
+#define IS_UPPERCASE(ch) (ch >= 'A' && ch <= 'Z')
+#define IS_ALPHABET(ch) (IS_LOWERCASE(ch) || IS_UPPERCASE(ch))
+#define IS_BIGGER_NUM(n1, n2) ((n1 > n2) ? n1 : n2)
+
+int main() {
+	char ch1 = 'A';
+	char ch2 = '1';
+	char ch3 = 'a';
+
+	printf("Test: %d %d %d \n", IS_UPPERCASE(ch1), IS_LOWERCASE(ch2), IS_ALPHABET(ch3));
+	printf("The bigger number between %d and %d is: %d\n", 10, 20, IS_BIGGER_NUM(10, 20));
+	return 0;
+}
+
+
+c)
+areaperi.h 
+#define PI 3.14
+#define AREA_TRI(b, h) (0.5*b*h)
+#define AREA_SQ(s) (s*s)
+#define AREA_CIRC(r) (PI*r*r)
+
+
+ex_c.c
+#include <stdio.h>
+#include <stdlib.h>
+#include "areaperi.h"
+
+int main() {
+	int sq_side;
+	float tri_b, tri_h, radius;
+	
+	printf("Enter the sides of a square: ");
+	scanf("%d", &sq_side);
+
+	printf("Enter the base and height of a triangle: ");
+	scanf("%f %f", &tri_b, &tri_h);
+
+	printf("Enter the radius of a circle: ");
+	scanf("%f", &radius);
+
+	printf("Area of Square: %d \n", AREA_SQ(sq_side));
+	printf("Area of Triangle: %f \n", AREA_TRI(tri_b, tri_h));
+	printf("Area of Circle: %f \n", AREA_CIRC(radius));
+
+	return 0;
+}
+
+d)
+#include <stdio.h>
+#include <stdlib.h>
+#define GET_MEAN(n1, n2) ((n1+n2)/2.0f) // 2.0 to get value in fp
+#define GET_ABS_VAL(n) ((n > 0) ? n : -n) // Or just use abs()
+#define LOWER(ch) (ch + 32)
+#define IS_BIGGER_NUM(n1, n2) ((n1 > n2) ? n1 : n2) // From ex_a
+
+int main() {
+	int num1 = 10, num2 = 20, num3 = -30;
+	char ch = 'C';
+
+	printf("Numbers are %d and %d. Mean is: %f\n", num1, num2, GET_MEAN(num1, num2));
+	printf("Absolute value of %d is %d\n", num3, GET_ABS_VAL(num3));
+	printf("Lowercase of letter %c is %c\n", ch, LOWER(ch));
+}
+
+
+e) 
+#include <stdio.h>
+#include <stdlib.h>
+#include "interest.h"
+
+int main() {
+	float p_amt = 5000, rate = 5, time = 2;
+	printf("Simple Interest is: %f\n", SIMPLE_INTEREST(p_amt, rate, time));
+
+	float sim_int = 500;
+	rate = 10, time = 2;
+	printf("Principal Amount is: %f\n", PRINCIPAL_AMT(sim_int, rate, time));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
