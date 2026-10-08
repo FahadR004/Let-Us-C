@@ -21,12 +21,13 @@ for file in $C_FILES; do
 	output_file="${BIN_DIR}/${base_file_name}" # smth like ./bin/ex_a
 	echo ${base_file_name} "${ud_file_name}.c" $output_file $file
 	if [ -f "${UD_DIR}/${ud_file_name}.c" ]; then		
-		gcc -c "${file}" "${UD_DIR}/${ud_file_name}.c" -I "${INCLUDE_DIR}"
-        	gcc "${base_file_name}.o" "${ud_file_name}.o" -o ${output_file}
+        	gcc -c "${file}" -I "${INCLUDE_DIR}"
+		gcc -c "${UD_DIR}/${ud_file_name}.c" -I "${INCLUDE_DIR}"
+		gcc "${base_file_name}.o" "${ud_file_name}.o" -o ${output_file}
 		mv  "${base_file_name}.o" "${SRC_OBJ_DIR}"
 		mv "${ud_file_name}.o" "${UD_OBJ_DIR}"	
 	else
-		gcc -c "${file}"
+		gcc -c "${file}" -I "${INCLUDE_DIR}"
         	gcc "${base_file_name}.o" -o ${output_file}
 		mv  "${base_file_name}.o" "${SRC_OBJ_DIR}"
 	fi	
@@ -36,4 +37,6 @@ for file in $C_FILES; do
 	fi
 done
 
-echo "Compiled and created executables for all C files in the bin directory"	
+if [ $? -eq 0 ]; then  
+	echo "Compiled and created executables for all C files in the bin directory"	
+fi
