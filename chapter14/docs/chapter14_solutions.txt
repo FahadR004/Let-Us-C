@@ -1,0 +1,39 @@
+Chapter 14 Exercises:
+
+Part A:
+a) Will print address (converted to int) for *n, since it points to address of the 0th 1-D array, then prints garbage value for n[3][3] since it is out-of-bounds of the array, then it prints the last value
+b) 2 
+   4 
+   3 
+   6 
+   8 
+   5 
+   3 
+   5 
+   1
+Will give warning:
+./src/ex_arr_ptr.c:128:6: warning: assignment to ‘int *’ from incompatible pointer type ‘int (*)[3]’ -Wincompatible-pointer-types]
+  128 |  ptr = n ;
+      |      ^
+Because, we are assigning pointer to int array to a normal int pointer.
+
+c) 2 2
+   4 4
+   3 3
+   6 6
+   8 8
+   5 5
+   3 3
+   5 5
+   1 1
+
+Part B:
+
+a) Undeclared second dimension, printing address of array with %d
+b) Undeclared second dimension
+
+Part C:
+a) 
+
+
+b) 
