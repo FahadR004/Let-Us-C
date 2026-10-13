@@ -1,0 +1,1 @@
+int validate_credit_card(char *s);

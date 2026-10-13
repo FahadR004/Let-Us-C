@@ -1,0 +1,103 @@
+Part A:
+
+a) A
+   A 
+
+b) t organised! learn C!!
+   Get organised! learn C!!
+   Get organised! learn C!!
+   t
+
+c) 
+N N
+N N
+o o
+o o
+
+
+t t
+t t
+w w
+w w
+o o
+o o
+
+
+v v
+v v
+i i
+i i
+r r
+r r
+u u
+u u
+s s
+s s
+e e
+e e
+s s
+s s
+
+
+w w
+w w
+o o
+o o
+r r
+r r
+k k
+k k
+
+
+s s
+s s
+i i
+i i
+m m
+m m
+i i
+i i
+l l
+l l
+a a
+a a
+r r
+r r
+l l
+l l
+y y
+y y
+
+
+d) Segfault
+
+e) Hello
+   Hello 
+
+f) Ignoring mismatch of return 0 with void in main, the output of this program is "Morning". 
+
+g) e
+
+h) 1 1 4 X
+   4 2 4 -> 3 is taken as int, 2 because of null terminating character at the end of array, 4 because int is 4 bytes
+
+A single character is essentially an integer value which is represented in 4 bytes. So, sizeof('a') would also give you 4 bytes. Additionally, integer character constant has type int. A character literal has type int. When you define with variable, you're essentially typecasting to char because right-hand assignment has priority.
+
+Part B:
+a) String instantiation is incorrect using char pointers instead of an array of chars.
+b) This prints ASCII value of the string's characters instead of the string itself (which is fine if that's the intended behaviour)
+c) The arr++ statement is not part of the for construct due to lack of parantheses. Thus, this will result in printing the ASCII value of the only first character of the string. 
+
+Part C:
+a) string, char
+b) null, \0
+c) 10/ 11 (if we're counting the null-terminating character as well)
+d) contiguous
+
+Part D:
+a) gets()
+b) str1: Alice, str2: in str3: wonder, str4: land
+c) 
+
+d) 
+https://stackoverflow.com/questions/5029840/convert-char-to-int-in-c-and-c
