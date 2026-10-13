@@ -1,0 +1,27 @@
+# Let Us C Exercises Solutions
+
+This GitHub repository implements the exercises of the book Let Us C by Yashavant Kanetkar. It has the following chapters on the C Language with different exercises and programming questions at the end of each chapter:
+
+1) Getting Started
+2) C Instructions
+3) Decision Control Structures
+4) More Complex Decision Making
+5) Loop Control Instruction
+6) More Complex Repititions
+7) Case Control Instruction
+8) Functions
+9) Pointers
+10) Recursion
+11) Data Types Revisited
+12) The C Preprocessor
+13) Arrays
+14) Multidimensional Arrays
+15) Strings
+16) Handling Multiple Strings
+17) Structures
+18) Console Input/Output
+19) File Input/Output
+20) More Issues in Input/Output
+21) Operations on Bits
+22) Miscellaneous Features
+23) C Under Linux
