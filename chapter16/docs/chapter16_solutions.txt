@@ -1,0 +1,11 @@
+Chapter 16 Exercises:
+
+Part A:
+
+a) For array of pointers to strings, the bytes in memory occupied are 58 bytes.
+For a twodimensional character array, you would require 68 bytes minimum to store the all the strings. 
+
+b) Using loop with malloc
+
+Part B:
+a) 
