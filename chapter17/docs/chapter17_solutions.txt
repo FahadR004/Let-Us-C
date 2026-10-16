@@ -1,0 +1,22 @@
+Chapter 17 Exercises:
+
+Part C:
+a) Array because it is used for storing the same data type
+
+b) 1 and 2 are true
+
+c) 
+	1. True
+	2. False
+	3. True
+
+d) pt->seconds, (*pt).secconds
+
+e) 
+	1. *(i+3) = 25
+	2. 
+
+
+
+
+Part D:
