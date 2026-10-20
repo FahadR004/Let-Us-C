@@ -1,6 +1,6 @@
 # Let Us C Exercises Solutions
 
-This GitHub repository implements the exercises of the book Let Us C by Yashavant Kanetkar. It has the following chapters on the C Language with different exercises and programming questions at the end of each chapter:
+This GitHub repository implements the exercises of the book Let Us C by Yashavant Kanetkar (14th Edition). It has the following chapters on the C Language with different exercises and programming questions at the end of each chapter:
 
 1) Getting Started
 2) C Instructions
