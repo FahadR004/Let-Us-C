@@ -1,0 +1,51 @@
+Chapter 18 Exercises:
+
+Part A:
+
+a) Converts lowercase to uppercase and uppercase to lowercase characters
+
+b)   2	2.537	Life is like that
+// Width is ignored if the numbers of characters to print naturally exceed it. 2.537 is greater than 3 hence, no extra tabs. 2 is one character so it prints that and adds 3 more spaces.
+
+c)  the person who wins is the one who thinks he can!
+/r jumps back to beginning of the current line and then starts overwriting the existing text with the new characters
+
+d) The sixth sick sheikh's sixth ship is sick
+// No new line is inputted
+
+
+Part B:
+
+a) You can't increment the entire array. You need to create a pointer and increment that. The following error is shown on compilation:
+error: lvalue required as increment operand
+   53 |   a++ ;
+      |    ^~
+
+b) Incorrect format specifier for double variable. Use lf in scanf.
+
+c) n is not defined. Should be ival.
+
+d) We have an uninitialized pointer to strings, meaning pointers are pointing garbage addresses and not actual addresses. Use either 2D arrays or malloc. By declaring a 2D array, like char *mess[5][100], you get 100 bytes of writable memory directly on the stack for each slot.
+
+e) No error. The %*c is will take a character/space but not assign it to anything
+
+f) text is not a string
+
+g) You cannot use precision width specifier inside sscanf
+
+
+Part C:
+
+a) fgets()
+
+b) getchar()
+
+c) scanf()
+
+d)  getch() takes only character without Enter Key 
+	getche() is the same but outputs the character as well
+	fgetchar() and getchar() are the same requiring an Enter Key. However, fgetchar() is deprecated and getchar() is used.
+
+e) Character, integer and floats (as in the format specifiers for them)
+
+f) Specify how many columns would be used to print the number
