@@ -1,0 +1,8 @@
+1Fahad          M220000
+2Fiza           F300000
+3Ahad           M400000
+4Neha           F500000
+5Hamza          M0     
+6Yahya          M200000
+7Moatasim       M300000
+8Safeer         M200000

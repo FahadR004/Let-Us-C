@@ -1,0 +1,17 @@
+The C Programming Language
+Developed by Dennis Ritchie at Bell Labs.
+It remains one of the most widely used languages of all time.
+Operating systems like Unix, Linux, and Windows are written in it.
+It provides low-level access to memory using pointers.
+
+Character I/O Functions
+Functions like fgetc and fputc read and write one byte at a time.
+They are highly reliable for parsing structured text data.
+Standard input and output are buffered by default in C.
+
+Line Constraints Check
+This text file acts as a perfect trial benchmark.
+Maximum lines allowed: 50.
+Maximum characters per line: 80.
+Testing file streams ensures robust software performance.
+End of sample file data.

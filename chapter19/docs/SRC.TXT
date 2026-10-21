@@ -1,0 +1,3 @@
+"This is the source file to be copied 
+Into the target file"
+"Hello from source"
