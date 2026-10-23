@@ -1,0 +1,25 @@
+Chapter 21 Exercises:
+
+Part A:
+
+g)  k = 35 l = -36  m = 0
+	n = 97  o = 260  p = 1
+(When converting a number to negative, you take one's complement i.e. flipping all the bits and then you add one. For l, you only did the first step, taking the complement and not adding one. Hence, the value goes from +35 to -36.)  
+
+
+Part B:
+
+a) 
+	0x5A
+	0xC3
+	0xAA75
+	0xF05A
+
+b) 
+	a |= 3;
+	a &= 0x48;
+	b ^= 0x22;
+	c <<= 2;
+	d >>= 4;
+
+c) ..
