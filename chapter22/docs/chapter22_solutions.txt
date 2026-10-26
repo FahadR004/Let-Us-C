@@ -1,0 +1,26 @@
+Chapter 22 Exercises:
+
+Part A:
+
+a) 0 1 2
+
+b) 1.00000
+
+c) 4
+
+Part B:
+
+a) None. Output is:	
+   anil 23
+   110 220
+
+b) None. Output is: 
+   don't show off. It won't pay in the long run 
+   don't show off. It won't pay in the long run
+
+c) None. Output is:
+   10 3.140000
+
+
+Part C:
+
