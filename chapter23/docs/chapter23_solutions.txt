@@ -1,0 +1,47 @@
+Chapter 23 Exercises:
+
+Part A:
+a) True
+b) False
+c) False
+d) False  
+e) False
+f) False (There is a family of exec functions())
+g) False (Linux intelligently shares data between processes)
+h) False
+i) False
+j) False
+k) False
+l) False
+m) True
+n) False
+o) False
+p) False
+q) True
+r) False
+s) True
+
+
+Part B:
+
+a) 16
+
+b) Zombie is when the child has finished execution and is waiting for parent to query it while Orphan is when parent has finished execution
+
+c) See 'ex_c.c'. * represents every file and folder in the current directory so, in my case, I recieve a total of 6 arguments (excluding the filename), which are the total files and folders present.
+
+d) getpid() prints the process id of the current process whereas the getppid() prints the process id of the parent of the current process
+
+e) Yes, the output changes as the program stops (sleeps) only for 1 second because 'i < 4294967295u' evaluates to true i.e. 1, compared to the while loop where it incremented until the condition was false, resulting in far larger time than one second.
+
+f) waitpid() makes the parent wait for the termination of the child process and queries the Process Table for the child process, thereby removing it from the table and returns it's exit code to the parent
+
+g) Using the signal() function from the signal.h library
+
+h) The default signal handler for that signal is replaced with our custom handler and our custom handler is called upon recieving a signal
+
+i) See 'ex_i.c'. Verified. Custom sighandler doesn't work.
+
+j) See 'ex_j.c'. Neither does the Ctrl+C, nor the kill command works. Only killing with kill -9 works.
+
+k) See 'ex_k.c'. Blocking the signal doesn't mean it's blocked, it's state becomes pending. Means it probably will be unblocked later. If it isn't then it is essentially ignored but it's state is still pending and it occupies space in the memory. 
